@@ -17,7 +17,7 @@ export default function App() {
         <InpurFiled />
         <Button
           title="Submit"
-          style={styles.btn}
+          // style={styles.btn}
           color={'#00008B'}
           accessibilityLabel="Learn more about this purple button"
         />

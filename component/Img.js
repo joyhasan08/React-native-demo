@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text } from 'react-native';
+import { View, Image, StyleSheet, Text, TouchableHighlight } from 'react-native';
+
 
 const styles = StyleSheet.create({
     container: {
@@ -21,6 +22,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         gap: 10,
+        padding: 5,
+        margin: 10,
+        backgroundColor: "cyan",
+        borderRadius: 10,
 
     },
     h1: {
@@ -28,6 +33,11 @@ const styles = StyleSheet.create({
     },
     p: {
         maxWidth: 350,
+        padding: 10,
+    },
+    flexRow: {
+        display: 'flex',
+        flexDirection: 'row'
     }
 });
 
@@ -35,25 +45,42 @@ const Img = () => {
     return (
 
         <View style={styles.container}>
+
+            <TouchableHighlight>
+                <View>
+                    <View style={styles.card}>
+                        <Image
+                            style={styles.logo}
+                            source={{
+                                uri: 'https://reactnative.dev/img/tiny_logo.png',
+                            }}
+                        />
+                        <Text style={styles.h1}>What is React Native</Text>
+
+                    </View>
+                    <Text style={styles.p}>What is React Native vs ReactJS?
+                        React utilizes HTML, CSS, and JavaScript to create interactive user interfaces, whereas React Native utilizes   </Text>
+                </View>
+            </TouchableHighlight>
             <Image
                 style={styles.tinyLogo}
                 source={{
-                    uri: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                    uri: 'https://picsum.photos/200/300'
                 }}
             />
-            <View>
-                <View style={styles.card}>
-                    <Image
-                        style={styles.logo}
-                        source={{
-                            uri: 'https://reactnative.dev/img/tiny_logo.png',
-                        }}
-                    />
-                    <Text style={styles.h1}>What is React Native</Text>
-
-                </View>
-                <Text style={styles.p}>What is React Native vs ReactJS?
-                    React utilizes HTML, CSS, and JavaScript to create interactive user interfaces, whereas React Native utilizes   </Text>
+            <View style={styles.flexRow}>
+                <Image
+                    style={styles.logo}
+                    source={require("./../assets/icon.png")}
+                />
+                <Image
+                    style={styles.logo}
+                    source={require("./../assets/adaptive-icon.png")}
+                />
+                <Image
+                    style={styles.logo}
+                    source={require("./../assets/splash.png")}
+                />
             </View>
 
         </View>
